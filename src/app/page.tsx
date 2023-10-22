@@ -1,4 +1,6 @@
 import styles from './home.module.scss'
+import Image from 'next/image'
+import hero from '@/../public/images/hero.svg'
 
 export default function Home() {
   return (
@@ -13,7 +15,12 @@ export default function Home() {
 
       </section>
 
-      <img src="/images/avatar.svg" alt="Girl coding" />
+      <Image 
+        src={hero}
+        width={600}
+        height={600}
+        alt="Girl coding" 
+      />
     </main>
   )
 }

@@ -6,7 +6,7 @@ export function Header(){
   return(
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
-        <img src={Logo} alt="ggnews" />
+        <h2>ggnews</h2>
 
         <nav>
           <Link className={styles.active} href={"/"}>Home</Link>
