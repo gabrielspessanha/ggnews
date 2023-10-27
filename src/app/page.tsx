@@ -2,8 +2,9 @@ import styles from './home.module.scss'
 import Image from 'next/image'
 import hero from '@/../public/images/hero.svg'
 import { SubscribeButton } from '@/components/SubscribeButton'
-import { GetServerSideProps } from 'next'
 import { stripe } from '@/services/stripe'
+
+export const revalidate = 60 * 60 * 24 //24 hours
 
 export default async function Home() {
   const price = await stripe.prices.retrieve('price_1O45qYFp6NpJQLelFIe0UouN')
@@ -32,7 +33,6 @@ export default async function Home() {
       <Image 
         src={hero}
         sizes="100vw"
-        
         alt="Girl coding" 
       />
     </main>
