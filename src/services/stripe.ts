@@ -1,8 +1,11 @@
 import Stripe from 'stripe'
-import { version } from '../../package.json'
+// Verifique se a variável de ambiente está definida e é uma string
+if (!process.env.STRIPE_API_KEY || typeof process.env.STRIPE_API_KEY !== 'string') {
+  throw new Error('A variável de ambiente STRIPE_API_KEY não está definida ou não é uma string.');
+}
 
 export const stripe = new Stripe(
-  'sk_test_51O45e1Fp6NpJQLelva6jIwosGSHb8wsZH4kUKtymssLobnoRYhjYpUTdwnIXez5THUo71YjEx5Bo8GDXxd3FvEW300l1XmctLA', 
+  process.env.STRIPE_API_KEY, 
   {
     apiVersion: '2023-10-16',
     appInfo: {

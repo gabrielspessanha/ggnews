@@ -1,8 +1,8 @@
 import styles from './home.module.scss'
 import Image from 'next/image'
 import hero from '@/../public/images/hero.svg'
-import { SubscribeButton } from '@/components/SubscribeButton'
 import { stripe } from '@/services/stripe'
+import SubscribeButton from '@/components/SubscribeButton'
 
 export const revalidate = 60 * 60 * 24 //24 hours
 
@@ -27,7 +27,7 @@ export default async function Home() {
           Get acess to all the publications <br />
           <span>for {product.amount} month</span>
         </p>
-        <SubscribeButton priceId={product.priceId} />
+        <SubscribeButton/>
       </section>
 
       <Image 
